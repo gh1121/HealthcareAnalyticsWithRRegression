@@ -1,0 +1,66 @@
+---
+title: 'Healthcare Analytics: Regression'
+author: "Eunice Santos"
+date: "November 28, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Healthcare Analytics: Regression  
+This website has the results from the <http://Lynda.com> course on Healthcare Analytics Regression in R with instructor Monica Wahi.  The data comes from BRFSS.  
+
+The dependent variable is sleep time. The indepdent variable is frequency of alcohol use. Covariates include gender and age. 
+
+
+
+
+
+### Plot for checking assumptions in linear regression
+![](C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_01\DxPlots.png)
+
+
+
+
+### Histogram before and after transformation of sleep time
+Eventhough the variable for Sleep Time does meet the assumptions for linear regression, it is transformed to illustrate the option to log transform. Other options for continous variables that are not normally distributed is to use categories, indexes, quartiles, or ranking. The other options are not illustrated here.
+
+![](C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_03\HistogramSleepTime.png)
+
+![](C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_03\HistogramSleepTimeLogTransform.png)
+
+
+
+
+###Modeling apporaches
+Three models were tested. The Final model was selected with a forward stepwise approach and review of the literature.  The final model included 21 variables.
+
+
+Model   | # covar    | # Significant covar    | Adjusted R square
+--------|------------|------------------------|------------------
+1       |  2         | 1                      | 0.0002
+2       |  8         | 4                      | 0.0521
+Final   | 18         |14                      | 0.3060
+
+
+
+
+
+###Final Regression model
+The final regression model had 18 covariates.  Fourteen of the covariates had positive associations.  In other words the higher the value for the covariate the higher the estimate.  After controllig for confounding variables compared to those who drink alcohol, those drinking alcohol weekly had on average 0.02 fewer hours of sleep per night. However the relationship was not statistically significant.  
+
+
+####Plot of Final Regression model
+![](C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch06\FinalRegressionModel.png)
+
+
+
+[]: C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_01\DxPlots.png "Check Assupmptions Linear Regression"
+
+[]: C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_03\HistogramSleepTime.png "Histogram of Sleep Time"
+
+[]: C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch02\02_03\HistogramSleepTimeLogTransform.png "Histogram of Sleep Tim with Log Transformation"
+
+[]: C:\Lynda\Ex_Files_Healthcare_Regression_R\Ch06\FinalRegressionModel.png "Final Regression Model"
